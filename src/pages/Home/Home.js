@@ -8,11 +8,11 @@ const Home = () => {
     return (
 <div>
 
-<div className="hero h-72" style={{ backgroundImage: `url("https://images.pexels.com/photos/347696/pexels-photo-347696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")` }}>
+<div className="hero h-96" style={{ backgroundImage: `url("https://images.pexels.com/photos/11516441/pexels-photo-11516441.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")` }}>
   <div className="hero-overlay bg-opacity-0"></div>
   <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">
-      <h1 className="mb-5 text-5xl text-black font-extrabold">Chronich Mart</h1>
+      <h1 className="mb-5 text-5xl text-zinc-900  font-extrabold">Chronic Mart</h1>
       <p className="mb-5">Buy or sell your used mobile phone..</p>
       {/* <button className="btn btn-primary">Get Started</button> */}
     </div>
