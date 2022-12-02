@@ -3,6 +3,8 @@ import Main from "../layouts/Main";
 import MyError from "../pages/404/MyError";
 import Blogs from "../pages/Blogs/Blogs";
 import Categories from "../pages/Categories/Categories";
+import Category from "../pages/Category/Category";
+import Dashboard from "../pages/Dashboard/Dashboard/Dashboard";
 import Home from "../pages/Home/Home";
 import LogIn from "../pages/login/LogIn";
 
@@ -24,16 +26,16 @@ export const routes = createBrowserRouter([
             {
                 path : '/blogs/:id',
                 loader: async({params}) => {
-                    return fetch(`https://my-edu-server.vercel.app/blogs/${params.id}`)
+                    return fetch(`http://localhost:5000/blogs/${params.id}`)
                   },
                 element : <SingleBlog></SingleBlog>
             },
             {
-                path : '/categories/:id',
-                loader: async({params}) => {
-                    return fetch(`http://localhost:5000/categories/${params.id}`)
-                  },
-                element : <Categories></Categories>
+                path : '/category/:id',
+                // loader: async({params}) => {
+                //     return fetch(`http://localhost:5000/categories/${params.id}`)
+                //   },
+                element : <Category></Category>
             },
             {
                 path : '/categories',
@@ -43,7 +45,7 @@ export const routes = createBrowserRouter([
             {
                 path : '/blogs',
                 loader: async () => {
-                    return fetch(`https://my-edu-server.vercel.app/blogs`)
+                    return fetch(`http://localhost:5000/blogs/`)
                   },
                 element : <Blogs></Blogs>
             },
@@ -51,6 +53,10 @@ export const routes = createBrowserRouter([
             {
                 path : '/login',
                 element : <LogIn></LogIn>
+            },
+            {
+                path : '/dashboard',
+                element : <Dashboard></Dashboard>
             },
             {
                 path : '/signup',

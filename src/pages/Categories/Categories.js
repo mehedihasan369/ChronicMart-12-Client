@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -15,7 +16,7 @@ const Categories = () => {
         
             
 
-{data.map(data=><button className="btn m-2 w-full">{data.name}</button>
+{data.map(data=><Link className="btn m-2 w-full">{data.name}</Link>
 )}
 {/* {data.map(data=><CategoryCard key={data.id} data={data} ></CategoryCard>)} */}
 
