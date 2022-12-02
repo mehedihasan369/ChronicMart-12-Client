@@ -1,7 +1,7 @@
 #  Project's features and functionalities
 
 * Authentication
-*react and react router
+* react and react router
 * css framework : tailwind
 * context api
 * Mongodb
