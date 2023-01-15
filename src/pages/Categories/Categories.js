@@ -13,10 +13,10 @@ const Categories = () => {
     }, []);
     return (
         <div>
-        
-            
+    
 
-{data.map(data=><Link className="btn m-2 w-full">{data.name}</Link>
+
+{data.map(data=><Link to={`/category/${data.id}`} className="btn m-2 w-full">{data.name}</Link>
 )}
 {/* {data.map(data=><CategoryCard key={data.id} data={data} ></CategoryCard>)} */}
 

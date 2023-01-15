@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import DashboardLayout from "../layouts/DashboardLayout";
 import Main from "../layouts/Main";
 import MyError from "../pages/404/MyError";
 import Blogs from "../pages/Blogs/Blogs";
@@ -32,9 +33,9 @@ export const routes = createBrowserRouter([
             },
             {
                 path : '/category/:id',
-                // loader: async({params}) => {
-                //     return fetch(`http://localhost:5000/categories/${params.id}`)
-                //   },
+                loader: async({params}) => {
+                    return fetch(`http://localhost:5000/categories?id=${params}`)
+                  },
                 element : <Category></Category>
             },
             {
@@ -54,10 +55,7 @@ export const routes = createBrowserRouter([
                 path : '/login',
                 element : <LogIn></LogIn>
             },
-            {
-                path : '/dashboard',
-                element : <Dashboard></Dashboard>
-            },
+           
             {
                 path : '/signup',
                 element : <SignUp></SignUp>
@@ -65,5 +63,18 @@ export const routes = createBrowserRouter([
  
         ]
     },
+     {
+                path : '/dashboard',
+                
+                element: <DashboardLayout><Dashboard></Dashboard></DashboardLayout>,
+
+                children : [
+                    {
+                        path: '/dashboard',
+                        element : <Dashboard></Dashboard>
+                    },
+
+                ]
+            },
     { path: '*', element: <MyError></MyError> }
 ])
